@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import heroImg from "/hero-profile.webp";
 import { FiGithub } from "react-icons/fi";
-import { FaFire } from "react-icons/fa";
+import { SiSkillshare } from "react-icons/si";
 import { GiSuitcase } from "react-icons/gi";
 import { ScrollTrigger } from "gsap/all";
 import { useNavigate } from "react-router-dom";
@@ -149,11 +149,11 @@ const Hero = () => {
             clients.
           </p>
           <button
-            onClick={() => navigate("/about")}
+            onClick={() => navigate("/skills")}
             className="flex items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
           >
-            <FaFire className="w-5 h-5" />
-            Find Me More
+            <SiSkillshare className="w-5 h-5" />
+            Skills
           </button>
         </div>
       </section>

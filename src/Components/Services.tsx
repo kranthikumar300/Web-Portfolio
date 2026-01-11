@@ -2,20 +2,35 @@ import services1 from "../../public/services1.webp";
 import services2 from "../../public/services2.webp";
 import services3 from "../../public/services3.webp";
 import comingSoonImg from "../../public/comingTem.webp";
-import { GiSuitcase } from "react-icons/gi";
+import { FaFire } from "react-icons/fa";
 import Skills from "./Skills";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Services = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#services-offer") {
+      const element = document.getElementById("services-offer");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <Skills />
-      <section className="flex flex-col justify-center items-center min-h-screen bg-[#efede3]">
-        <h1 className="text-center text-white  text-5xl font-bold bg-[#1B1C1D] p-2">
+      <section
+        id="services-offer"
+        className="flex flex-col justify-center items-center min-h-screen pt-20 py-10 px-4 md:py-16 bg-[#efede3]"
+      >
+        <h1 className="text-center text-white text-4xl sm:text-5xl lg:text-6xl font-bold bg-[#1B1C1D] p-2">
           Services I Offer
         </h1>
-        <div className="flex justify-evenly gap-52 p-4 mt-10">
+        <div className="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 xl:gap-36">
           <div className="flex flex-col justify-center items-center rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services1}
@@ -64,8 +79,8 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-y-15 py-10 min-h-screen bg-[#1B1C1D]">
-        <h1 className=" font-bold text-center text-5xl text-white">
+      <section className="flex flex-col justify-center items-center gap-y-15 py-10 px-4 min-h-screen bg-[#1B1C1D]">
+        <h1 className="font-bold text-center text-4xl sm:text-5xl lg:text-6xl text-white">
           PROJECTS AND TESTIMONIALS
         </h1>
 
@@ -73,19 +88,19 @@ const Services = () => {
           <img
             src={comingSoonImg}
             alt="coming Soon"
-            className="h-80 w-250 my-10 mx-10 object-center rounded-xl shadow-2xl"
+            className="w-full h-64 lg:w-240 lg:my-10 object-center rounded-xl shadow-2xl"
           />
-          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-5xl text-white">
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-3xl lg:text-5xl text-center text-white">
             On the Horizon
           </h1>
         </div>
 
         <button
           onClick={() => navigate("/about")}
-          className="flex items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
+          className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
         >
-          <GiSuitcase />
-          Hire Me
+          <FaFire className="h-5 w-5" />
+          About
         </button>
       </section>
     </>

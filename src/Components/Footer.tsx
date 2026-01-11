@@ -5,7 +5,7 @@ import { FaUpwork } from "react-icons/fa6";
 const Footer = () => {
   return (
     <>
-      <footer className="flex flex-col justify-evenly items-center min-h-100 pt-5 bg-[#1B1C1D]">
+      <footer className="flex flex-col justify-evenly items-center min-h-100 pt-5 px-4 bg-[#1B1C1D]">
         <p className="text-white max-w-96 text-center">
           Have an idea or project in mind? Let’s collaborate to build reliable,
           scalable digital solutions that bring your vision to life. Get in

@@ -36,48 +36,72 @@ const About = () => {
 
   return (
     <>
-      <section className="aboutSection flex justify-around items-center gap-x-30 min-h-screen bg-[#1B1C1D]">
-        <figure className="relative w-80 h-80 flex gap-10 shrink-0 ml-24">
+      <section className="aboutSection flex flex-col lg:flex-row lg:justify-around items-center gap-8 min-h-screen px-4 py-10 md:py-16 bg-[#1B1C1D]">
+        {/* Desktop Responsive Grid */}
+        <div className="hidden xl:block relative w-96 h-80 gap-10">
           <img
             src={img1}
-            alt="img1"
-            className="Timg absolute top-30 left-50 h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 1"
+            className="Timg absolute top-30 left-50 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img2}
-            alt="img2"
-            className="Timg absolute bottom-36 h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 2"
+            className="Timg absolute bottom-36 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img3}
-            alt="img3"
-            className="Timg absolute left-70 bottom-20 h-80 rounded-sm w-80 object-cover object-center"
+            alt="Travel Destination 3"
+            className="Timg absolute left-70 bottom-20 h-72 w-72 rounded-sm  object-cover object-center"
           />
           <img
             src={img4}
-            alt="img4"
-            className="Timg absolute right-40 top-30 h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 4"
+            className="Timg absolute right-40 top-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img5}
-            alt="img4"
-            className="Timg absolute right-40  h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 5"
+            className="Timg absolute right-40 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img6}
-            alt="img4"
-            className="Timg absolute right-40  bottom-30 h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 6"
+            className="Timg absolute right-40 bottom-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img7}
-            alt="img4"
-            className="Timg absolute left-20  h-80 w-80 rounded-sm object-cover object-center"
+            alt="Travel Destination 7"
+            className="Timg absolute left-20 h-72 w-72 rounded-sm object-cover object-center"
           />
-        </figure>
+        </div>
+        {/* Mobile Responsive Grid */}
+        <div className="grid grid-cols-2 gap-4 xl:hidden">
+          <img
+            src={img4}
+            alt="Travel Destination 4"
+            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+          />
+          <img
+            src={img5}
+            alt="Travel Destination 5"
+            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+          />
+          <img
+            src={img6}
+            alt="Travel Destination 6"
+            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+          />
+          <img
+            src={img7}
+            alt="Travel Destination 7"
+            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+          />
+        </div>
 
-        <div className="flex flex-col items-center justify-center gap-y-10 py-3 px-3">
+        <div className="flex flex-col items-center justify-center gap-y-5 mt-10 py-3 px-3">
+          <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold">TRAVELLING</h1>
           <p className="text-center text-white max-w-140 p-2">
-            <h1 className="text-6xl mb-4 font-bold">TRAVELLING</h1>
             Beyond technology, I’m an aspiring traveler who dreams of exploring
             new places, cultures, and perspectives. Travel fuels my creativity
             and curiosity, helping me approach problems with an open mindset.
@@ -89,7 +113,7 @@ const About = () => {
             people from diverse backgrounds.
           </p>
           <button
-            onClick={() => navigate("/services")}
+            onClick={() => navigate("/skills#services-offer")}
             className="flex items-center justify-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
           >
             <FaServicestack className="h-5 w-5" />
@@ -98,9 +122,9 @@ const About = () => {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-y-6 bg-[#1B1C1D] py-10">
-        <h1 className="font-bold text-6xl text-white">FOOT BALL</h1>
-        <div className="flex justify-evenly gap-30 p-4">
+      <section className="flex flex-col justify-center items-center gap-y-6 px-4 lg:px-10 py-10 bg-[#1B1C1D]">
+        <h1 className="font-bold text-4xl sm:text-5xl xl:text-6xl text-white">FOOT BALL</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-20">
           <img
             src={football1}
             alt="football1"
@@ -128,7 +152,7 @@ const About = () => {
           personal interests and professional work.
         </p>
         <button
-          onClick={() => navigate("/services")}
+          onClick={() => navigate("/skills")}
           className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
         >
           <SiSkillshare className="w-5 h-5" />
