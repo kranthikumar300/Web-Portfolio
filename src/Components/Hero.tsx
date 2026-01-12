@@ -1,99 +1,29 @@
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 import heroImg from "/hero-profile.webp";
 import { FiGithub } from "react-icons/fi";
 import { SiSkillshare } from "react-icons/si";
 import { GiSuitcase } from "react-icons/gi";
-import { ScrollTrigger } from "gsap/all";
 import { useNavigate } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const navigate = useNavigate();
 
-  useGSAP(() => {
-    gsap.fromTo(
-      ".heroText",
-      { y: -50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "elastic.out",
-        stagger: { amount: 1, from: "end" },
-      }
-    );
-
-    gsap.fromTo(
-      ".heroimg",
-      { z: 90, opacity: 0 },
-      {
-        z: 0,
-        opacity: 1,
-        duration: 1,
-        delay: 1.5,
-        ease: "elastic.out",
-      }
-    );
-
-    gsap.fromTo(
-      ".bioText",
-      { x: 90, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.5,
-        delay: 2,
-        ease: "expo.out",
-        stagger: { amount: 1, from: "end" },
-      }
-    );
-
-    gsap.fromTo(
-      ".gitbtn",
-      { x: 90, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.5,
-        delay: 2,
-        ease: "bounce",
-        stagger: {
-          amount: 0.5,
-        },
-      }
-    );
-
-    gsap.to("#imgScroll", {
-      y: 700,
-      x: 700,
-      rotation: 0,
-      scale: 1.2,
-      scrollTrigger: {
-        trigger: "#imgScroll",
-        start: "top top",
-        scrub: true,
-      },
-    });
-  });
-
   return (
     <>
-      <section className="heroSection flex flex-col justify-center items-center gap-y-2 min-h-screen py-10 px-4 bg-[#efede3]">
+      <section className="flex flex-col justify-center items-center gap-y-2 min-h-screen py-10 px-4 bg-[#efede3]">
         <div className="flex flex-col md:flex-row items-center gap-2 md:gap-5">
-          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor">
             MERN
           </span>
-          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor">
             STACK
           </span>
-          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor">
             DEVELOPER
           </span>
         </div>
 
-        <div className="flex flex-col sm:justify-center lg:flex-row lg:gap-20 items-center sm:gap-50 md:gap-1">
+        <div className="flex flex-col sm:justify-center lg:flex-row lg:gap-20 xl:gap-40 items-center sm:gap-50 md:gap-1">
           <img
             src={heroImg}
             alt="Profile"
@@ -105,14 +35,14 @@ const Hero = () => {
             className="heroimg w-60 h-80 lg:w-80 lg:h-96 rounded-xl border-black border-t-4 shadow-2xl object-cover object-center"
           />
           <div className="flex flex-col justify-center items-center min-h-100">
-            <p className="text-center text-white p-3 rounded-2xl text-lg px-4 m-4 max-w-120 bg-textColor bioText">
+            <p className="text-center text-white p-3 rounded-2xl text-lg px-4 m-4 max-w-120 bg-textColor xl:bg-transparent xl:text-black">
               I’m Kranthi Kireet, a MERN developer crafting scalable, responsive
               web experiences using React, TypeScript, GSAP and modern animation
               tools.
             </p>
             <div className="flex gap-x-5 p-2">
               <a href="https://github.com/kranthikumar300" target="_blank">
-                <button className="flex justify-center items-center gap-2 bg-textColor text-white border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn">
+                <button className="flex justify-center items-center gap-2 bg-textColor text-white border-black border-2 rounded-md px-5 py-2 cursor-pointer">
                   <FiGithub className="w-5 h-5" />
                   Github
                 </button>
@@ -121,7 +51,7 @@ const Hero = () => {
                 href="https://www.upwork.com/freelancers/~0150099f2b2a22d228?mp_source=share"
                 target="_blank"
               >
-                <button className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn">
+                <button className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer">
                   <GiSuitcase className="w-5 h-5" />
                   Hire Me
                 </button>
@@ -131,7 +61,7 @@ const Hero = () => {
         </div>
       </section>
 
-      <section className="flex justify-start items-center px-4 py-10 min-h-screen bg-[#1B1C1D]">
+      <section className="flex justify-center items-center px-4 py-10 min-h-screen bg-[#1B1C1D]">
         <div className="flex flex-col items-center justify-center min-h-100 p-3 gap-4">
           <h1 className="text-4xl text-white font-bold mb-4">ME</h1>
           <p className="text-white max-w-200 text-center">

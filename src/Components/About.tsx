@@ -11,28 +11,9 @@ import football2 from "/football2.webp";
 import football3 from "/football3.webp";
 import { SiSkillshare } from "react-icons/si";
 import { FaServicestack } from "react-icons/fa6";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
 
 const About = () => {
   const navigate = useNavigate();
-  useGSAP(() => {
-    gsap.fromTo(
-      ".Timg",
-      {
-        scale: 0,
-        rotation: 0,
-        opacity: 0,
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        stagger: 0.15,
-        duration: 0.6,
-        ease: "back.out(1.7)",
-      }
-    );
-  });
 
   return (
     <>
@@ -42,37 +23,37 @@ const About = () => {
           <img
             src={img1}
             alt="Travel Destination 1"
-            className="Timg absolute top-30 left-50 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute top-30 left-50 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img2}
             alt="Travel Destination 2"
-            className="Timg absolute bottom-36 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute bottom-36 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img3}
             alt="Travel Destination 3"
-            className="Timg absolute left-70 bottom-20 h-72 w-72 rounded-sm  object-cover object-center"
+            className="absolute left-70 bottom-20 h-72 w-72 rounded-sm  object-cover object-center"
           />
           <img
             src={img4}
             alt="Travel Destination 4"
-            className="Timg absolute right-40 top-30 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute right-40 top-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img5}
             alt="Travel Destination 5"
-            className="Timg absolute right-40 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute right-40 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img6}
             alt="Travel Destination 6"
-            className="Timg absolute right-40 bottom-30 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute right-40 bottom-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img7}
             alt="Travel Destination 7"
-            className="Timg absolute left-20 h-72 w-72 rounded-sm object-cover object-center"
+            className="absolute left-20 h-72 w-72 rounded-sm object-cover object-center"
           />
         </div>
         {/* Mobile Responsive Grid */}
@@ -80,22 +61,22 @@ const About = () => {
           <img
             src={img4}
             alt="Travel Destination 4"
-            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+            className="h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img5}
             alt="Travel Destination 5"
-            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+            className="h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img6}
             alt="Travel Destination 6"
-            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+            className="h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img7}
             alt="Travel Destination 7"
-            className="Timg h-48 w-48 rounded-sm object-cover object-center"
+            className="h-48 w-48 rounded-sm object-cover object-center"
           />
         </div>
 
