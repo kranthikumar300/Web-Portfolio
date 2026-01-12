@@ -80,20 +80,20 @@ const Hero = () => {
 
   return (
     <>
-      <section className="heroSection flex flex-col justify-center items-center gap-y-2 min-h-screen bg-[#efede3]">
-        <div className="flex items-start gap-x-10 tracking-wide">
-          <span className="text-9xl font-bold font-title text-textColor heroText">
+      <section className="heroSection flex flex-col justify-center items-center gap-y-2 min-h-screen py-10 px-4 bg-[#efede3]">
+        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-5">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
             MERN
           </span>
-          <span className="text-9xl font-bold font-title text-textColor heroText">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
             STACK
           </span>
-          <span className="text-9xl font-bold font-title text-textColor heroText">
+          <span className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold font-title text-textColor heroText">
             DEVELOPER
           </span>
         </div>
 
-        <div className="flex justify-center items-start gap-50">
+        <div className="flex flex-col sm:justify-center lg:flex-row lg:gap-20 items-center sm:gap-50 md:gap-1">
           <img
             src={heroImg}
             alt="Profile"
@@ -102,10 +102,10 @@ const Hero = () => {
               transformOrigin: "center center",
             }}
             id="imgScroll"
-            className="heroimg w-80 h-96 rounded-xl border-black border-t-4 shadow-2xl object-cover object-center"
+            className="heroimg w-60 h-80 lg:w-80 lg:h-96 rounded-xl border-black border-t-4 shadow-2xl object-cover object-center"
           />
           <div className="flex flex-col justify-center items-center min-h-100">
-            <p className="text-center text-lg px-4 m-4 max-w-120 bioText">
+            <p className="text-center text-white p-3 rounded-2xl text-lg px-4 m-4 max-w-120 bg-textColor bioText">
               I’m Kranthi Kireet, a MERN developer crafting scalable, responsive
               web experiences using React, TypeScript, GSAP and modern animation
               tools.
@@ -131,9 +131,9 @@ const Hero = () => {
         </div>
       </section>
 
-      <section className="flex justify-start items-center min-h-screen bg-[#1B1C1D]">
-        <div className="flex flex-col items-center justify-around min-h-100 p-3 ml-10 mt-10">
-          <h1 className="text-5xl text-white font-bold mb-4">ME</h1>
+      <section className="flex justify-start items-center px-4 py-10 min-h-screen bg-[#1B1C1D]">
+        <div className="flex flex-col items-center justify-center min-h-100 p-3 gap-4">
+          <h1 className="text-4xl text-white font-bold mb-4">ME</h1>
           <p className="text-white max-w-200 text-center">
             I’m a MERN Stack web developer with hands-on experience working at a
             freelance firm, where I build responsive, user-friendly web
@@ -150,7 +150,7 @@ const Hero = () => {
           </p>
           <button
             onClick={() => navigate("/skills")}
-            className="flex items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
+            className="flex items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 mt-4 cursor-pointer gitbtn"
           >
             <SiSkillshare className="w-5 h-5" />
             Skills

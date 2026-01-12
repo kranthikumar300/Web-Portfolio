@@ -1,7 +1,7 @@
-import services1 from "../../public/services1.webp";
-import services2 from "../../public/services2.webp";
-import services3 from "../../public/services3.webp";
-import comingSoonImg from "../../public/comingTem.webp";
+import services1 from "/services1.webp";
+import services2 from "/services2.webp";
+import services3 from "/services3.webp";
+import comingSoonImg from "/comingTem.webp";
 import { FaFire } from "react-icons/fa";
 import Skills from "./Skills";
 import { useLocation, useNavigate } from "react-router-dom";
