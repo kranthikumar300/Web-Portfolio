@@ -11,6 +11,7 @@ const Services = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Scroll to the services-offer section if the hash is present in the URL
   useEffect(() => {
     if (location.hash === "#services-offer") {
       const element = document.getElementById("services-offer");
@@ -22,16 +23,22 @@ const Services = () => {
 
   return (
     <>
+      {/* Skills File */}
       <Skills />
+
+      {/* Services first Section */}
       <section
         id="services-offer"
-        className="flex flex-col justify-center items-center min-h-screen pt-20 py-10 px-4 md:py-16 bg-[#efede3]"
+        className="flex justify-center items-center flex-col min-h-screen pt-20 py-10 px-4 md:py-16 bg-[#efede3]"
       >
-        <h1 className="text-center text-white text-4xl sm:text-5xl lg:text-6xl font-bold bg-[#1B1C1D] p-2">
+        <h1 className="text-white text-center text-4xl sm:text-5xl lg:text-6xl font-bold bg-[#1B1C1D] p-2">
           Services I Offer
         </h1>
+
+        {/* Services Grid */}
         <div className="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 xl:gap-36">
-          <div className="flex flex-col justify-center items-center rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+          {/* Web Development */}
+          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services1}
               alt="Web Development"
@@ -46,7 +53,9 @@ const Services = () => {
               practices.
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+
+          {/* App Development */}
+          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services2}
               alt="App Development"
@@ -61,7 +70,9 @@ const Services = () => {
               experiences.
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+
+          {/* Cloud Services */}
+          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services3}
               alt="Cloud Services"
@@ -79,11 +90,13 @@ const Services = () => {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-y-15 py-10 px-4 min-h-screen bg-[#1B1C1D]">
+      {/* 2 Services Section */}
+      <section className="flex justify-center items-center flex-col gap-y-15 py-10 px-4 min-h-screen bg-[#1B1C1D]">
         <h1 className="font-bold text-center text-4xl sm:text-5xl lg:text-6xl text-white">
           PROJECTS AND TESTIMONIALS
         </h1>
 
+        {/* Projects and Testimonials Section */}
         <div className="relative">
           <img
             src={comingSoonImg}
@@ -95,6 +108,7 @@ const Services = () => {
           </h1>
         </div>
 
+        {/* About */}
         <button
           onClick={() => navigate("/about")}
           className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"

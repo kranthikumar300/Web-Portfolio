@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <>
-      <section className="aboutSection flex flex-col lg:flex-row lg:justify-around items-center gap-8 min-h-screen px-4 py-10 md:py-16 bg-[#1B1C1D]">
+      <section className="flex items-center flex-col lg:flex-row lg:justify-around gap-8 min-h-screen px-4 py-10 md:py-16 bg-[#1B1C1D]">
         {/* Desktop Responsive Grid */}
         <div className="hidden xl:block relative w-96 h-80 gap-10">
           <img
@@ -33,7 +33,7 @@ const About = () => {
           <img
             src={img3}
             alt="Travel Destination 3"
-            className="absolute left-70 bottom-20 h-72 w-72 rounded-sm  object-cover object-center"
+            className="absolute left-70 bottom-20 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img4}
@@ -80,8 +80,10 @@ const About = () => {
           />
         </div>
 
-        <div className="flex flex-col items-center justify-center gap-y-5 mt-10 py-3 px-3">
-          <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold">TRAVELLING</h1>
+        <div className="flex items-center justify-center flex-col gap-y-5 mt-10 py-3 px-3">
+          <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold">
+            TRAVELLING
+          </h1>
           <p className="text-center text-white max-w-140 p-2">
             Beyond technology, I’m an aspiring traveler who dreams of exploring
             new places, cultures, and perspectives. Travel fuels my creativity
@@ -103,8 +105,10 @@ const About = () => {
         </div>
       </section>
 
-      <section className="flex flex-col justify-center items-center gap-y-6 px-4 lg:px-10 py-10 bg-[#1B1C1D]">
-        <h1 className="font-bold text-4xl sm:text-5xl xl:text-6xl text-white">FOOT BALL</h1>
+      <section className="flex justify-center items-center flex-col gap-y-6 px-4 lg:px-10 py-10 bg-[#1B1C1D]">
+        <h1 className="font-bold text-4xl sm:text-5xl xl:text-6xl text-white">
+          FOOT BALL
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-20">
           <img
             src={football1}

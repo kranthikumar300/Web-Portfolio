@@ -11,7 +11,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex justify-between items-center px-5 py-3 bg-[#efede3]">
+      <header className="flex justify-between items-center sticky top-0 z-10 px-5 py-3 bg-[#efede3]">
+        {/* Logo */}
         <Link
           onClick={() => setIsMenuOpen(true)}
           to="/"
@@ -20,6 +21,7 @@ const Header = () => {
           @Kranthi.
         </Link>
 
+        {/* Navigation Menu in Laptop */}
         <nav className="hidden gap-10 sm:flex items-center">
           {NavMenu.map((item, index) => (
             <NavLink to={`/${item}`} key={index}>
@@ -28,6 +30,7 @@ const Header = () => {
           ))}
         </nav>
 
+        {/* Navigation Menu in Mobile */}
         <div className="flex items-center justify-center sm:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
@@ -37,9 +40,10 @@ const Header = () => {
             )}
           </button>
 
+          {/* Mobile Menu Items */}
           {!isMenuOpen && (
             <nav className="md:hidden absolute top-14 left-0 w-56 h-screen bg-[#efede3]">
-              <div className="flex flex-col justify-between h-full gap-4 pb-20">
+              <div className="flex justify-between flex-col h-full gap-4 pb-20">
                 <div className="flex flex-col items-center gap-4 mt-10">
                   {NavMenu.map((item, index) => (
                     <NavLink
@@ -55,12 +59,13 @@ const Header = () => {
                   ))}
                 </div>
 
+                {/* Services Button */}
                 <button
                   onClick={() => {
                     setIsMenuOpen(true);
                     navigate("/skills#services-offer");
                   }}
-                  className="flex items-center justify-center gap-2 bg-[#1B1C1D] text-white border-black border-2 rounded-md px-5 py-2 cursor-pointer mx-auto"
+                  className="flex justify-center items-center gap-2 bg-[#1B1C1D] text-white border-black border-2 rounded-md px-5 py-2 cursor-pointer mx-auto"
                 >
                   <FaServicestack className="h-5 w-5" />
                   Services
