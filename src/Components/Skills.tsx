@@ -5,21 +5,43 @@ import {
   SiMongodb,
   SiTailwindcss,
 } from "react-icons/si";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Skills = () => {
+  // GSAP Animation Hook
+  useGSAP(() => {
+    //Skills Title Animation
+    gsap.from(".SkillsTitle", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+    });
+
+    // Skills Grid Animation
+    gsap.from(".skillgrid", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.3,
+    });
+  }, []);
+
   return (
     <>
       {/* Skills Section */}
       <section className="flex justify-center items-center flex-col gap-y-12 min-h-screen py-4 px-4 md:py-16 bg-[#1B1C1D]">
         {/* Skills Title */}
-        <h1 className="text-white font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+        <h1 className="SkillsTitle text-white font-bold text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
           Skills
         </h1>
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-12 xl:grid-cols-5">
           {/* JavaScript */}
-          <div className="flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
+          <div className="skillgrid flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
             <SiJavascript className="h-20 w-20 p-4 text-yellow-400" />
             <h2 className="text-3xl text-white font-bold">JavaScript</h2>
             <p className="text-[12px] max-w-52 text-center text-white">
@@ -29,7 +51,7 @@ const Skills = () => {
           </div>
 
           {/* React & Native */}
-          <div className="flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
+          <div className="skillgrid flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
             <SiReact className="h-20 w-20 p-4 text-sky-500" />
             <h2 className="text-3xl text-white font-bold">React & Native</h2>
             <p className="text-[12px] max-w-52 text-center text-white">
@@ -39,7 +61,7 @@ const Skills = () => {
           </div>
 
           {/* Express */}
-          <div className="flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
+          <div className="skillgrid flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
             <SiExpress className="h-20 w-20 p-4 text-white" />
             <h2 className="text-3xl text-white font-bold">Express</h2>
             <p className="text-[12px] max-w-52 text-center text-white">
@@ -49,7 +71,7 @@ const Skills = () => {
           </div>
 
           {/* MongoDB */}
-          <div className="flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
+          <div className="skillgrid flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
             <SiMongodb className="h-20 w-20 p-4 text-green-400" />
             <h2 className="text-3xl text-white font-bold">MongoDB</h2>
             <p className="text-[12px] max-w-52 text-center text-white">
@@ -59,7 +81,7 @@ const Skills = () => {
           </div>
 
           {/* TailwindCSS */}
-          <div className="flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
+          <div className="skillgrid flex justify-center items-center flex-col gap-y-2 sm:gap-y-3">
             <SiTailwindcss className="h-20 w-20 p-4 text-sky-400" />
             <h2 className="text-3xl text-white font-bold">TailwindCSS</h2>
             <p className="text-[12px] max-w-52 text-center text-white">
@@ -70,7 +92,7 @@ const Skills = () => {
         </div>
 
         {/* Additional Skills Description */}
-        <div className="flex justify-center items-center">
+        <div className="skillgrid flex justify-center items-center">
           <p className="text-white text-center max-w-200 p-4">
             Includes intermediate-level experience in the MERN stack, with
             hands-on practice in building full-stack applications and managing

@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
   const navigate = useNavigate();
 
+  // GSAP Animation Hook
   useGSAP(() => {
     // Section 1 Animations
     // Animate Title Text
@@ -55,10 +56,9 @@ const Hero = () => {
     });
 
     // Section 2 Animations
-
     // Animate About Me Title
     gsap.from(".workTitle", {
-      y: -50,
+      y: 50,
       opacity: 0,
       duration: 0.5,
       ease: "expo.out",
@@ -71,7 +71,7 @@ const Hero = () => {
 
     // Animate About Me paragraph
     gsap.from(".workParagraph", {
-      y: -50,
+      y: 50,
       opacity: 0,
       duration: 0.5,
       ease: "expo.out",

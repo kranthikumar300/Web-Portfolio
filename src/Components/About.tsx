@@ -11,9 +11,107 @@ import football2 from "/football2.webp";
 import football3 from "/football3.webp";
 import { SiSkillshare } from "react-icons/si";
 import { FaServicestack } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const About = () => {
   const navigate = useNavigate();
+
+  // GSAP Animation Hook
+  useGSAP(() => {
+    // Travelling Section Img Animation
+    gsap.fromTo(
+      ".Timg",
+      {
+        scale: 0.5,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1.5,
+        ease: "elastic.out",
+        stagger: 0.3,
+      }
+    );
+
+    // Travelling Section Text Animation
+    gsap.from(".travelling-text", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      ease: "expo.out",
+      stagger: 0.2,
+    });
+
+    // Travelling Section Text Animation
+    // Animate Buttons
+    gsap.from(".ServiceBtn", {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      ease: "bounce.out",
+      delay: 2,
+    });
+
+    // Football Section Animation
+    // Animate Title
+    gsap.from(".football-box", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".football-box",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Animate Football Images
+    gsap.from(".football-img", {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".football-box",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Animate Football Paragraph
+    gsap.from(".football-text", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 1,
+      ease: "expo.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: ".football-box",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Animate Skills Button
+    gsap.from(".skillsBtn", {
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      ease: "bounce.out",
+      scrollTrigger: {
+        trigger: ".skillsBtn",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, []);
 
   return (
     <>
@@ -23,37 +121,37 @@ const About = () => {
           <img
             src={img1}
             alt="Travel Destination 1"
-            className="absolute top-30 left-50 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute top-30 left-50 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img2}
             alt="Travel Destination 2"
-            className="absolute bottom-36 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute bottom-36 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img3}
             alt="Travel Destination 3"
-            className="absolute left-70 bottom-20 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute left-70 bottom-20 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img4}
             alt="Travel Destination 4"
-            className="absolute right-40 top-30 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute right-40 top-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img5}
             alt="Travel Destination 5"
-            className="absolute right-40 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute right-40 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img6}
             alt="Travel Destination 6"
-            className="absolute right-40 bottom-30 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute right-40 bottom-30 h-72 w-72 rounded-sm object-cover object-center"
           />
           <img
             src={img7}
             alt="Travel Destination 7"
-            className="absolute left-20 h-72 w-72 rounded-sm object-cover object-center"
+            className="Timg absolute left-20 h-72 w-72 rounded-sm object-cover object-center"
           />
         </div>
         {/* Mobile Responsive Grid */}
@@ -81,10 +179,10 @@ const About = () => {
         </div>
 
         <div className="flex items-center justify-center flex-col gap-y-5 mt-10 py-3 px-3">
-          <h1 className="text-4xl sm:text-5xl xl:text-6xl text-white font-bold">
+          <h1 className="travelling-text text-4xl sm:text-5xl xl:text-6xl text-white font-bold">
             TRAVELLING
           </h1>
-          <p className="text-center text-white max-w-140 p-2">
+          <p className="travelling-text text-center text-white max-w-140 p-2">
             Beyond technology, I’m an aspiring traveler who dreams of exploring
             new places, cultures, and perspectives. Travel fuels my creativity
             and curiosity, helping me approach problems with an open mindset.
@@ -95,9 +193,11 @@ const About = () => {
             only functional, but also intuitive, inclusive, and impactful for
             people from diverse backgrounds.
           </p>
+
+          {/* Services Button */}
           <button
             onClick={() => navigate("/skills#services-offer")}
-            className="flex items-center justify-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
+            className="ServiceBtn flex items-center justify-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
           >
             <FaServicestack className="h-5 w-5" />
             Services
@@ -105,28 +205,29 @@ const About = () => {
         </div>
       </section>
 
-      <section className="flex justify-center items-center flex-col gap-y-6 px-4 lg:px-10 py-10 bg-[#1B1C1D]">
-        <h1 className="font-bold text-4xl sm:text-5xl xl:text-6xl text-white">
+      {/* Football Section 2*/}
+      <section className="flex justify-center items-center flex-col gap-y-8 px-4 lg:px-10 py-10 bg-[#1B1C1D]">
+        <h1 className="football-box font-bold text-4xl sm:text-5xl xl:text-6xl text-white">
           FOOT BALL
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 xl:gap-20">
           <img
             src={football1}
             alt="football1"
-            className="h-80 w-80 object-cover object-center"
+            className="football-img h-80 w-80 object-cover object-center"
           />
           <img
             src={football2}
             alt="football2"
-            className="h-80 w-80 object-cover object-center"
+            className="football-img h-80 w-80 object-cover object-center"
           />
           <img
             src={football3}
             alt="football3"
-            className="h-80 w-80 object-cover object-center"
+            className="football-img h-80 w-80 object-cover object-center"
           />
         </div>
-        <p className="text-white text-center max-w-200">
+        <p className="football-text text-white text-center max-w-200">
           Outside of technology, football is a hobby I genuinely enjoy and
           actively follow. While I don’t have professional or competitive
           experience, I regularly watch matches and stay updated with teams,
@@ -138,7 +239,7 @@ const About = () => {
         </p>
         <button
           onClick={() => navigate("/skills")}
-          className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
+          className="skillsBtn flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer"
         >
           <SiSkillshare className="w-5 h-5" />
           Technical Skills

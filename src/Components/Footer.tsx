@@ -1,8 +1,33 @@
 import { CiLinkedin } from "react-icons/ci";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaUpwork } from "react-icons/fa6";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Footer = () => {
+  // GSAP Animations for Footer Icons
+  useGSAP(() => {
+    // Footer Icons Animation
+    gsap.fromTo(
+      ".footerIcons",
+      {
+        scale: 0.85,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "elastic.out",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".footerIcons",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  }, []);
   return (
     <>
       {/* Footer Separator Line */}
@@ -24,12 +49,12 @@ const Footer = () => {
               href="https://www.linkedin.com/in/bingi-kranthi/"
               target="_blank"
             >
-              <CiLinkedin className="size-20 text-white " />
+              <CiLinkedin className="footerIcons size-20 text-white " />
             </a>
 
             {/* Gmail Icon */}
             <a href="mailto:kranthikumar9.official@gmail.com">
-              <BiLogoGmail className="size-20 text-white" />
+              <BiLogoGmail className="footerIcons size-20 text-white" />
             </a>
 
             {/* Upwork Icon */}
@@ -37,7 +62,7 @@ const Footer = () => {
               href="https://www.upwork.com/freelancers/~0150099f2b2a22d228?mp_source=share"
               target="_blank"
             >
-              <FaUpwork className="size-20 text-white" />
+              <FaUpwork className="footerIcons size-20 text-white" />
             </a>
           </div>
 

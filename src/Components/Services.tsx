@@ -6,8 +6,11 @@ import { FaFire } from "react-icons/fa";
 import Skills from "./Skills";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Services = () => {
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -21,6 +24,51 @@ const Services = () => {
     }
   }, [location]);
 
+  // GSAP Animation Hook
+  useGSAP(() => {
+    //Section 1 Animations
+    // Services Title Animation
+    gsap.from(".servicesTitle", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "expo.out",
+      scrollTrigger: {
+        trigger: ".servicesTitle",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    // Services Grid Animation
+    gsap.from(".servicesGrid", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      ease: "elastic.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".servicesGrid",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    //Section 2 Animations
+    // About Button Animation
+    gsap.from(".aboutBtn", {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "bounce.out",
+      scrollTrigger: {
+        trigger: ".aboutBtn",
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  });
+
   return (
     <>
       {/* Skills File */}
@@ -31,14 +79,14 @@ const Services = () => {
         id="services-offer"
         className="flex justify-center items-center flex-col min-h-screen pt-20 py-10 px-4 md:py-16 bg-[#efede3]"
       >
-        <h1 className="text-white text-center text-4xl sm:text-5xl lg:text-6xl font-bold bg-[#1B1C1D] p-2">
+        <h1 className="servicesTitle text-white text-center text-4xl sm:text-5xl lg:text-6xl font-bold bg-[#1B1C1D] p-2">
           Services I Offer
         </h1>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 xl:gap-36">
           {/* Web Development */}
-          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+          <div className="servicesGrid flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services1}
               alt="Web Development"
@@ -55,7 +103,7 @@ const Services = () => {
           </div>
 
           {/* App Development */}
-          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+          <div className="servicesGrid flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services2}
               alt="App Development"
@@ -72,7 +120,7 @@ const Services = () => {
           </div>
 
           {/* Cloud Services */}
-          <div className="flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
+          <div className="servicesGrid flex justify-center items-center flex-col rounded-2xl pb-5 gap-y-8 w-80 min-h-80 bg-white shadow-2xl">
             <img
               src={services3}
               alt="Cloud Services"
@@ -92,7 +140,7 @@ const Services = () => {
 
       {/* 2 Services Section */}
       <section className="flex justify-center items-center flex-col gap-y-15 py-10 px-4 min-h-screen bg-[#1B1C1D]">
-        <h1 className="font-bold text-center text-4xl sm:text-5xl lg:text-6xl text-white">
+        <h1 className="servicesTitle font-bold text-center text-4xl sm:text-5xl lg:text-6xl text-white">
           PROJECTS AND TESTIMONIALS
         </h1>
 
@@ -111,7 +159,7 @@ const Services = () => {
         {/* About */}
         <button
           onClick={() => navigate("/about")}
-          className="flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
+          className="aboutBtn flex justify-center items-center gap-2 bg-[#efede3] text-black border-black border-2 rounded-md px-5 py-2 cursor-pointer gitbtn"
         >
           <FaFire className="h-5 w-5" />
           About
