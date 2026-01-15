@@ -2,12 +2,43 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { FaServicestack } from "react-icons/fa6";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Header = () => {
   const NavMenu = ["skills", "about"];
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const navigate = useNavigate();
+  const sideNavBarRef = useRef(null);
+
+  // GSAP Animation for Mobile Menu
+  useGSAP(() => {
+    if (!isMenuOpen && sideNavBarRef.current) {
+      // Animate the side navigation bar into view
+      gsap.fromTo(
+        sideNavBarRef.current,
+        {
+          x: -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "expo.out",
+        }
+      );
+    }
+  }, [isMenuOpen]);
+
+  // GSAP Animation for Menu Icon
+  useGSAP(() => {
+    gsap.from(".navIcon", {
+      rotate: 180,
+      duration: 0.5,
+    });
+  }, [isMenuOpen]);
 
   return (
     <>
@@ -34,15 +65,18 @@ const Header = () => {
         <div className="flex items-center justify-center sm:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
-              <GiHamburgerMenu className="h-5 w-5" />
+              <GiHamburgerMenu className="navIcon h-5 w-5" />
             ) : (
-              <RxCross2 className="h-5 w-5" />
+              <RxCross2 className="navIcon h-5 w-5" />
             )}
           </button>
 
           {/* Mobile Menu Items */}
           {!isMenuOpen && (
-            <nav className="md:hidden absolute top-14 left-0 w-56 h-screen bg-[#efede3]">
+            <nav
+              ref={sideNavBarRef}
+              className="md:hidden absolute top-14 left-0 w-56 h-screen bg-[#efede3]"
+            >
               <div className="flex justify-between flex-col h-full gap-4 pb-20">
                 <div className="flex flex-col items-center gap-4 mt-10">
                   {NavMenu.map((item, index) => (
