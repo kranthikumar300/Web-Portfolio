@@ -31,4 +31,4 @@ This portfolio is optimized for deployment on Vercel.
 - Gmail : kranthikumar9.official@gmail.com
 - upwork : https://www.upwork.com/freelancers/~0150099f2b2a22d228?mp_source=share
 
-If you’d like to collaborate or discuss a project, feel free to reach out through the contact section.
+If you’d like to collaborate or discuss a project, feel free to reach out through the contact section..
