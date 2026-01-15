@@ -35,6 +35,22 @@ const About = () => {
       }
     );
 
+    // Travelling Section Img Animation(Mobile Responsive Grid)
+    gsap.fromTo(
+      ".MobileTimg",
+      {
+        scale: 0.5,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "elastic.out",
+        stagger: 0.3,
+      }
+    );
+
     // Travelling Section Text Animation
     gsap.from(".travelling-text", {
       opacity: 0,
@@ -159,22 +175,22 @@ const About = () => {
           <img
             src={img4}
             alt="Travel Destination 4"
-            className="h-48 w-48 rounded-sm object-cover object-center"
+            className="MobileTimg h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img5}
             alt="Travel Destination 5"
-            className="h-48 w-48 rounded-sm object-cover object-center"
+            className="MobileTimg h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img6}
             alt="Travel Destination 6"
-            className="h-48 w-48 rounded-sm object-cover object-center"
+            className="MobileTimg h-48 w-48 rounded-sm object-cover object-center"
           />
           <img
             src={img7}
             alt="Travel Destination 7"
-            className="h-48 w-48 rounded-sm object-cover object-center"
+            className="MobileTimg h-48 w-48 rounded-sm object-cover object-center"
           />
         </div>
 
